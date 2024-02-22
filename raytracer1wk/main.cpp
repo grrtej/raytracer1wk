@@ -7,6 +7,7 @@ int main()
 
 	std::cout << "P3\n" << width << " " << height << "\n255\n";
 	for (auto j = 0;j < height;j++) {
+		std::clog << "\rScanlines remaining: " << (height - j) << " ";
 		for (auto i = 0;i < width;i++) {
 			auto r = double(i) / (width - 1);
 			auto g = double(j) / (height - 1);
@@ -19,4 +20,5 @@ int main()
 			std::cout << ir << " " << ig << " " << ib << std::endl;
 		}
 	}
+	std::clog << "\rDone                     \n";
 }
